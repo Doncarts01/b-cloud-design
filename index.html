@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-Cloud Logo Concepts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .color-palettes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .palette-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .palette-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .color-row {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            margin-right: 15px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .color-info {
+            flex: 1;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .color-hex {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-family: monospace;
+        }
+        
+        .logo-concepts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .logo-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .logo-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        
+        .logo-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+        
+        .logo-description {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+        
+        /* Logo Styles */
+        .connected-cloud {
+            width: 140px;
+            height: 80px;
+            position: relative;
+        }
+        
+        .cloud-shape {
+            width: 100%;
+            height: 60px;
+            background: #1E3A8A;
+            border-radius: 30px;
+            position: relative;
+        }
+        
+        .cloud-shape::before,
+        .cloud-shape::after {
+            content: '';
+            position: absolute;
+            background: #1E3A8A;
+            border-radius: 50%;
+        }
+        
+        .cloud-shape::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 15px;
+        }
+        
+        .cloud-shape::after {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            right: 15px;
+        }
+        
+        .connection-nodes {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 40px;
+        }
+        
+        .node {
+            width: 8px;
+            height: 8px;
+            background: #F97316;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .node:nth-child(1) { top: 5px; left: 10px; }
+        .node:nth-child(2) { top: 5px; right: 10px; }
+        .node:nth-child(3) { bottom: 5px; left: 20px; }
+        .node:nth-child(4) { bottom: 5px; right: 20px; }
+        .node:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F97316; }
+        
+        .service-hub {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+        
+        .hub-center {
+            width: 40px;
+            height: 40px;
+            background: #7C3AED;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .service-icon {
+            width: 20px;
+            height: 20px;
+            background: #14B8A6;
+            border-radius: 4px;
+            position: absolute;
+        }
+        
+        .service-icon:nth-child(2) { top: 10px; left: 50%; transform: translateX(-50%); }
+        .service-icon:nth-child(3) { top: 50%; right: 10px; transform: translateY(-50%); }
+        .service-icon:nth-child(4) { bottom: 10px; left: 50%; transform: translateX(-50%); }
+        .service-icon:nth-child(5) { top: 50%; left: 10px; transform: translateY(-50%); }
+        .service-icon:nth-child(6) { top: 25px; right: 25px; }
+        .service-icon:nth-child(7) { bottom: 25px; left: 25px; }
+        
+        .digital-ecosystem {
+            width: 100px;
+            height: 80px;
+            position: relative;
+        }
+        
+        .ecosystem-b {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .b-segment {
+            position: absolute;
+            background: #0EA5E9;
+            border-radius: 8px;
+        }
+        
+        .b-segment:nth-child(1) {
+            width: 60px;
+            height: 25px;
+            top: 0;
+            left: 0;
+        }
+        
+        .b-segment:nth-child(2) {
+            width: 50px;
+            height: 20px;
+            top: 30px;
+            left: 0;
+        }
+        
+        .b-segment:nth-child(3) {
+            width: 60px;
+            height: 25px;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .b-segment:nth-child(4) {
+            width: 15px;
+            height: 70px;
+            top: 5px;
+            left: 0;
+            background: #1E293B;
+        }
+        
+        .cloud-layers {
+            width: 120px;
+            height: 70px;
+            position: relative;
+        }
+        
+        .layer {
+            position: absolute;
+            border-radius: 25px;
+            opacity: 0.8;
+        }
+        
+        .layer:nth-child(1) {
+            width: 100px;
+            height: 30px;
+            background: #14B8A6;
+            top: 0;
+            left: 10px;
+        }
+        
+        .layer:nth-child(2) {
+            width: 110px;
+            height: 35px;
+            background: #7C3AED;
+            top: 15px;
+            left: 5px;
+        }
+        
+        .layer:nth-child(3) {
+            width: 120px;
+            height: 40px;
+            background: #E9D5FF;
+            top: 30px;
+            left: 0;
+        }
+        
+        .variant-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .variant {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .variant-1 { background: linear-gradient(135deg, #030E4F, #210070); }
+        .variant-2 { background: linear-gradient(135deg, #5247fa, #03c8fc); }
+        .variant-3 { background: linear-gradient(135deg, #7C3AED, #14B8A6); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>B-Cloud Brand Identity Concepts</h1>
+        
+        <div class="color-palettes">
+            <!-- <div class="palette-card">
+                <div class="palette-title">Option 1: Modern Tech Blue & Orange</div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #1E3A8A;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Blue (Primary)</div>
+                        <div class="color-hex">#1E3A8A</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #F97316;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Vibrant Orange (Secondary)</div>
+                        <div class="color-hex">#F97316</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #F1F5F9;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Gray (Accent)</div>
+                        <div class="color-hex">#F1F5F9</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="palette-card">
+                <div class="palette-title">Option 2: Cloud-Inspired Blues</div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #0EA5E9;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Sky Blue (Primary)</div>
+                        <div class="color-hex">#0EA5E9</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #1E293B;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Navy (Secondary)</div>
+                        <div class="color-hex">#1E293B</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #06B6D4;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bright Cyan (Accent)</div>
+                        <div class="color-hex">#06B6D4</div>
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="palette-card">
+                <div class="palette-title">Option 1: Praise's option  (Progressive Purple & Teal)</div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #7C3AED;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Rich Purple (Primary)</div>
+                        <div class="color-hex">#7C3AED</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #14B8A6;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Teal (Secondary)</div>
+                        <div class="color-hex">#14B8A6</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #E9D5FF;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Purple (Accent)</div>
+                        <div class="color-hex">#E9D5FF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palette-card">
+                <div class="palette-title">Option 2: Slyvester's option  </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #030E4F;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Navy Blue (Primary)</div>
+                        <div class="color-hex">#030E4F</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #210070;"></div>
+                    <div class="color-info">
+                        <div class="color-name"> Deep blue</div>
+                        <div class="color-hex">#210070</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #33213970;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Grey</div>
+                        <div class="color-hex">#33213970</div>
+                    </div>
+                </div>
+                <!-- <div class="color-row">
+                    <div class="color-swatch" style="background: #f4b41a;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Golden yellow</div>
+                        <div class="color-hex">#f4b41a</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #143d59;"></div>
+                    <div class="color-info">
+                        <div class="color-name"></div>
+                        <div class="color-hex">#143d59</div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="palette-card">
+                <div class="palette-title">Option 3: Dennis's option</div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #5247fa;"></div>
+                    <div class="color-info">
+                        <div class="color-name">blue (Primary)</div>
+                        <div class="color-hex">#5247fa</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #03c8fc;"></div>
+                    <div class="color-info">
+                        <div class="color-name">cyan (Secondary)</div>
+                        <div class="color-hex">#03c8fc</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-swatch" style="background: #131376;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Deep blue</div>
+                        <div class="color-hex">#131376</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="logo-concepts">
+            <div class="logo-card">
+                <div class="logo-title">Concept 1: Connected Cloud</div>
+                <div class="logo-container">
+                    <div class="connected-cloud">
+                        <div class="cloud-shape"></div>
+                        <div class="connection-nodes">
+                            <div class="node"></div>
+                            <div class="node"></div>
+                            <div class="node"></div>
+                            <div class="node"></div>
+                            <div class="node"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-description">
+                    A cloud with interconnected nodes representing how B-Cloud connects all your tech services in one ecosystem. The nodes light up in your accent color to show innovation and connectivity.
+                </div>
+            </div>
+            
+            <div class="logo-card">
+                <div class="logo-title">Concept 2: Multi-Service Hub</div>
+                <div class="logo-container">
+                    <div class="service-hub">
+                        <div class="hub-center">B</div>
+                        <div class="service-icon"></div>
+                        <div class="service-icon"></div>
+                        <div class="service-icon"></div>
+                        <div class="service-icon"></div>
+                        <div class="service-icon"></div>
+                        <div class="service-icon"></div>
+                    </div>
+                </div>
+                <div class="logo-description">
+                    Central "B" with surrounding elements representing each service - web dev, mobile, design, academy, and outsourcing. Shows B-Cloud as the hub of all tech solutions.
+                </div>
+            </div>
+            
+            <div class="logo-card">
+                <div class="logo-title">Concept 3: Digital Ecosystem</div>
+                <div class="logo-container">
+                    <div class="digital-ecosystem">
+                        <div class="ecosystem-b">
+                            <div class="b-segment"></div>
+                            <div class="b-segment"></div>
+                            <div class="b-segment"></div>
+                            <div class="b-segment"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-description">
+                    A geometric "B" formed by interconnected segments that can transform to represent different services, showing growth and adaptability in the digital space.
+                </div>
+            </div>
+            
+            <div class="logo-card">
+                <div class="logo-title">Concept 4: Cloud Layers</div>
+                <div class="logo-container">
+                    <div class="cloud-layers">
+                        <div class="layer"></div>
+                        <div class="layer"></div>
+                        <div class="layer"></div>
+                    </div>
+                </div>
+                <div class="logo-description">
+                    Flowing, layered shapes that form both a cloud and subtle "B" silhouette. Each layer represents a service offering, building a comprehensive tech solution.
+                </div>
+            </div>
+        </div> -->
+        
+        <div style="margin-top: 40px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <h3 style="color: #1e293b; margin-bottom: 15px;">Logo Variations with Different Color Schemes</h3>
+            <div class="variant-grid">
+                <div class="variant variant-1">Navy Blue & Deep blue</div>
+                <div class="variant variant-2"> Blue & cyan</div>
+                <div class="variant variant-3">Purple & Teal</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
